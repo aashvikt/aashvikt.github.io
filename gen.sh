@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
+set -e
 
 command -v comrak >/dev/null || {
     echo "comrak required"
