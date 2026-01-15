@@ -153,7 +153,7 @@ ${article}"
 
     for tag in $post_tags; do
         tagn=$(get_tag_index $tag)
-        eval "tag_${tagn}_html=\"\${tag_${tagn}_html}
+        eval "tag_${tagn}_html=\"\${tag_${tagn}_html-}
 ${article}\""
     done
 
@@ -227,7 +227,7 @@ for tag in $(
     <header>
         <a href='#${tag}'>${tag}</a>
     </header>
-    $(eval echo \${tag_$(get_tag_index $tag)_html})
+    $(eval echo \${tag_$(get_tag_index $tag)_html-})
 </section>
 <br>"
 
