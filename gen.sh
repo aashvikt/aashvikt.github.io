@@ -7,7 +7,7 @@ command -v comrak >/dev/null || {
 }
 
 
-rm -r public/
+rm -rf public/
 mkdir -p public/
 cp -r include/* posts public/
 
