@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>${post_title}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noarchive">
+        <meta name="description" content="${post_desc}">
+        <meta name="keywords" content="${post_tags_comma}">
+        <meta name="generator" content="https://aashvik.com/gen.sh">
+        <link rel="icon" type="image/png" title="favicon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAgMAAAAqbBEUAAAACVBMVEW6tqt1cmtDQj3XPfanAAABQklEQVQoz42QsW7CMBCGf1tOVDIZKQPJxEClkKdwpcDAVCSoKiaGDtCncBGtOpqhUtspQ4uSPGXtOyQy1ovv091/998B/35lHzrXg9/tNRYvzRWk3fUyrgfSlX1IwpdeNPEPkC8NgZFvSPeOQYuzs4dPgkhXUTdPCoLRbYW8KcYEhfWzhu5E3QrsPQkLHhDb0JNgolBHSNhB8WDzaZ1RrNrFa+rwzpJm2gxcwtbGX49jqeRlwW53WsTfzYoh/3gWXSNo0TItO7dt78nn/Hje1JN2QxlZ5yYbZeRHqTYCkgN0SOld1FXmYtQUgyDmG99lqCAwoQYYhHK9YAv+E7OlZFG81kqzSEB6TXBMmSEXjFjEcCP7wGc48v5PNMmENiIJ7TSXrUq+nPFT1qgp1hVMCratfJmXcWMoG04/4xjb3CrcAH/J5UENrZr6ywAAAABJRU5ErkJggg==">
+        <link rel="alternate" type="application/rss+xml" title="rss feed" href="/rss.xml">
+        <link rel="alternate" type="application/atom+xml" title="atom feed" href="/atom.xml">
+        <link rel="alternate" type="application/feed+json" title="json feed" href="/feed.json">
+        <link rel="sitemap" type="application/xml" title="sitemap" href="/sitemap.xml">
+        <style>@font-face { font-family: archivo; font-display: swap; src: url('/font/archivo.woff2') format('woff2'), url('/font/archivo.woff') format('woff'); }
+@font-face { font-family: inconsolata; font-display: swap; src: url('/font/inconsolata.woff2') format('woff2'), url('/font/inconsolata.woff') format('woff'); }
+/* fg, bg, link, target, code-bg, muted */
+:root {
+    color-scheme: light dark;
+    --fg: light-dark(#1a1a1a, #eaeaea);
+    --bg: light-dark(#fafafa, #121212);
+    --a: light-dark(#0050b3, #3a72e8);
+    --t: light-dark(#0072ff54, #3a72e899);
+    --cbg: light-dark(#ddd, #333);
+    --m: light-dark(#555, #aaa);
+    &:has(#light:checked) { color-scheme: light; }
+    &:has(#dark:checked) { color-scheme: dark; }
+}
+input[name=theme]:checked+label { text-decoration: underline; }
+label[for=light], label[for=dark] { cursor: pointer; }
+body { font-family: archivo, sans-serif; line-height: 1.2; color: var(--fg); background: var(--bg); max-width: 65ch; margin: 0 auto; padding: 0 1ch; }
+a { color: var(--a); }
+main :not(h1:first-of-type) > a.anchor::before { content: "#"; margin-right: 0.5ch; }
+pre, code, span[data-math-style] { font-family: inconsolata, monospace; }
+:not(pre)>code, span[data-math-style] { background-color: var(--cbg); word-wrap: break-word; }
+img, video, audio, iframe, pre, table, figure { width: fit-content; max-width: 100%; padding: 1ch 0; overflow-x: auto; margin: 0px auto; display: block; }
+pre { box-sizing: border-box; padding: 1ch; color: lightgray; background: #1d2021 !important; }
+figure { display: table; align-self: flex-start; }
+figcaption { color: var(--m); display: table-caption; caption-side: bottom; margin-top: -1ch; margin-bottom: 1ch; }
+table { border-collapse: collapse; }
+tr>:not(:last-child) { padding-right: 1ch; border-right: 1px solid var(--fg); }
+tr>:not(:first-child) { padding-left: 1ch; }
+thead { border-bottom: 1px solid var(--fg); }
+details { border-left-color: var(--cbg); }
+blockquote { color: var(--m); border-left-color: var(--m); margin-left: 1ch; }
+.markdown-alert, details, blockquote { border-left-width: 0.5ch; border-left-style: solid; padding-left: 1ch; }
+.markdown-alert-note { border-left-color: #007acc; }
+.markdown-alert-note .markdown-alert-title::before { content: "ⓘ"; margin-right: 0.5ch; }
+.markdown-alert-tip { border-left-color: #2e8b57; }
+.markdown-alert-tip .markdown-alert-title::before { content: "✧"; margin-right: 0.5ch; }
+.markdown-alert-important { border-left-color: #9b5de5; }
+.markdown-alert-important .markdown-alert-title::before { content: "ǃ"; margin-right: 0.5ch; } /* https://en.wikipedia.org/wiki/alveolar_click */
+.markdown-alert-warning { border-left-color: #e0a800; }
+.markdown-alert-warning .markdown-alert-title::before { content: "⚠"; margin-right: 0.5ch; }
+.markdown-alert-caution { border-left-color: #e63946; }
+.markdown-alert-caution .markdown-alert-title::before { content: "☢"; margin-right: 0.5ch; }
+dt, .markdown-alert-title { font-weight: bold; }
+dd { margin-left: 1ch; color: var(--m); }
+dd::before, figcaption::before { content: "└─"; margin-right: 0.5ch; }
+.spoiler, .spoiler * { background-color: var(--fg) !important; }
+.spoiler:hover, .spoiler:focus { color: var(--bg); }
+.footnotes { font-size: smaller; color: var(--m); }
+section[data-footnotes].footnotes ol li p {margin: 1ch}
+article[post] { display: flex; align-items: baseline; }
+article[post] time { font-size: smaller; white-space: nowrap; margin-right: 1ch; }
+article[post][gem] time, a[gem], :target  { background: radial-gradient(var(--t), transparent); }
+:target { text-shadow: var(--bg) 0 0 1ch; }
+article[post][sw] a, span[sw] { color: light-dark(blue, #0978db); }
+article[post][hw] a, span[hw] { color: light-dark(green, #1daf3d); }
+article[post][rb] a, span[rb] { color: light-dark(red, #dd1a34); }
+article[post][misc] a, span[misc] { color: light-dark(#555, #777); }</style>
+        ${head_extension}
+    </head>
+    <body>
+        <header><nav><p>
+            <a href="/">~ash</a> ·
+            <a href="/git">git</a> ·
+            <a href="/tags">tags</a> ·
+            feeds:
+                <a href="/rss.xml" title="rss feed">rss</a>,
+                <a href="/atom.xml" title="atom feed">atom</a>,
+                <a href="/feed.json" title="json feed">json</a> ·
+            elsewhere:
+                <a href="https://github.com/aashvikt">github</a>,
+                <a href="https://discord.com/users/828870867424378921">discord</a>,
+                <a href="mailto:aashvik@aashvik.com">mail</a> ·
+            <input type=radio id=light name=theme hidden> <label for=light>☼</label> /
+            <input type=radio id=dark name=theme hidden> <label for=dark>☾</label>
+        </p></nav></header>
+        <main>${post_content}</main>
+        <footer><nav><p>
+            <a href="https://github.com/aashvikt/site">source</a> ·
+            <a href="https://250kb.club/aashvik-com">250kb.club</a> ·
+            © ash <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a>
+        </p></nav></footer>
+    </body>
+</html>

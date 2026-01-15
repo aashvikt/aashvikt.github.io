@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://aashvik.com/</id>
+    <title>aashvik's feed</title>
+    <updated>${date_8601}</updated>
+    <author>
+        <name>Aashvik Tyagi</name>
+        <email>aashvik@aashvik.com</email>
+    </author>
+    <link type="text/html" href="https://aashvik.com"/>
+    <link rel="self" type="application/atom+xml" title="aashvik.com's atom feed" href="https://aashvik.com/atom.xml"/>
+    <link rel="alternate" type="application/rss+xml" title="aashvik.com's rss feed" href="/rss.xml"/>
+    <link rel="alternate" type="application/feed+json" title="aashvik.com's json feed" href="/feed.json"/>
+    <category term="weblog" scheme='https://aashvik.com' label='weblog'/>
+    <generator uri="https://aashvik.com/gen.sh">my posix-shell static-site-generator script</generator>
+    <icon>/favicon.png</icon><logo>/favicon.png</logo>
+    <rights>© 2024—2025 Aashvik Tyagi CC BY-NC-SA</rights>
+    <subtitle>An Atom feed of posts from aashvik.com: computers, robotics, and more.</subtitle>
+    ${items_atom}
+</feed>

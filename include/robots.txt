@@ -1,0 +1,10 @@
+# robots.txt for https://aashvik.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://aashvik.com/sitemap.xml
+
+RSS: https://aashvik.com/rss.xml
+Atom: https://aashvik.com/atom.xml
+JSONFeed: https://aashvik.com/feed.json

@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1.1",
+    "title": "aashvik's feed",
+    "home_page_url": "https://aashvik.com/",
+    "feed_url": "https://aashvik.com/feed.json",
+    "description": "An JSON feed of posts from aashvik.com: computers, robotics, and more.",
+    "user_comment": "This feed links to posts on aashvik.com",
+    "icon": "https://aashvik.com/favicon.png",
+    "favicon": "https://aashvik.com/favicon.png",
+    "authors": [{
+        "name": "Aashvik Tyagi",
+        "url": "mailto:aashvik@aashvik.com",
+        "avatar": "https://aashvik.com/favicon.png"
+    }],
+    "language": "en",
+    "expired": false,
+    "items": [${items_json}]
+}

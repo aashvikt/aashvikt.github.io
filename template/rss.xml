@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:content="https://purl.org/rss/1.0/modules/content/" xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:slash="https://purl.org/rss/1.0/modules/slash/">
+    <channel>
+        <title>aashvik's feed</title>
+        <link>https://aashvik.com</link>
+        <atom:link href="https://aashvik.com/rss.xml" rel="self" type="application/rss+xml" />
+        <description>An RSS feed of posts from aashvik.com: computers, robotics, and more.</description>
+        <language>en</language>
+        <copyright>© 2024—2025 Aashvik Tyagi CC BY-NC-SA</copyright>
+        <managingEditor>aashvik@aashvik.com (Aashvik Tyagi)</managingEditor>
+        <webMaster>aashvik@aashvik.com (Aashvik Tyagi)</webMaster>
+        <pubDate>${date_2822}</pubDate>
+        <lastBuildDate>${date_2822}</lastBuildDate>
+        <category>weblog</category>
+        <generator>https://aashvik.com/gen.sh</generator>
+        <docs>https://www.rssboard.org/rss-specification</docs>
+        <image>
+            <link>https://aashvik.com</link>
+            <title>aashvik's feed</title>
+            <url>https://aashvik.com/favicon.png</url>
+            <description>Read the aashvik.com feed!</description>
+            <height>48</height>
+              <width>48</width>
+        </image>
+        ${items_rss}
+    </channel>
+</rss>
