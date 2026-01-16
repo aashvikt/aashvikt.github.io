@@ -43,7 +43,7 @@ mkdir public/gen.sh
 post_title="gen.sh"    \
 post_desc="static site generator" \
 post_tags_comma="generator, script, ssg" \
-head_extension="<style>body {max-width: 80ch;}</style>" \
+head_extension="<style>body {width: 80ch;}</style>" \
 post_content="$(printf '# gen.sh\n```sh\n%s\n```' "$(cat gen.sh)" | comrak)" \
 envsubst < template/index.html > public/gen.sh/index.html
 
