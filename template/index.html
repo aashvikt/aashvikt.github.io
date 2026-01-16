@@ -20,7 +20,7 @@
     color-scheme: light dark;
     --fg: light-dark(#1a1a1a, #eaeaea);
     --bg: light-dark(#fafafa, #121212);
-    --a: light-dark(#0050b3, #3a72e8);
+    --a: light-dark(#0050b3, #4da3ff);
     --t: light-dark(#0072ff54, #3a72e899);
     --cbg: light-dark(#ddd, #333);
     --m: light-dark(#555, #aaa);
@@ -29,7 +29,7 @@
 }
 input[name=theme]:checked+label { text-decoration: underline; }
 label[for=light], label[for=dark] { cursor: pointer; }
-body { font-family: archivo, sans-serif; line-height: 1.2; color: var(--fg); background: var(--bg); max-width: 65ch; margin: 0 auto; padding: 0 1ch; }
+body { font-family: archivo, sans-serif; line-height: 1.2; color: var(--fg); background: var(--bg); width: fit-content; max-width: min(65ch, 90vw); margin: 0 auto; padding: 0 1ch; }
 a { color: var(--a); }
 main :not(h1:first-of-type) > a.anchor::before { content: "#"; margin-right: 0.5ch; }
 pre, code, span[data-math-style] { font-family: inconsolata, monospace; }
