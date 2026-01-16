@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+# set -e
 
 command -v comrak >/dev/null || {
     echo "comrak required"
@@ -38,7 +38,14 @@ get_tag_index() {
 }
 
 
-cp gen.sh public/gen.sh
+mkdir public/gen.sh
+
+post_title="gen.sh"    \
+post_desc="static site generator" \
+post_tags_comma="generator, script, ssg" \
+head_extension="<style>body {max-width: 80ch;}</style>" \
+post_content="$(printf '# gen.sh\n```sh\n%s\n```' "$(cat gen.sh)" | comrak)" \
+envsubst < template/index.html > public/gen.sh/index.html
 
 
 post_title="404 not found" \

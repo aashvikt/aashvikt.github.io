@@ -36,6 +36,8 @@ jobs:
           else
             echo "comrak already available"
           fi
+      - name: export short commit sha
+        run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       - name: build site
         run: |
           chmod +x ./gen.sh
