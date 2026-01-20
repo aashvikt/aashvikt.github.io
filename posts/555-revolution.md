@@ -1,12 +1,12 @@
 ---
-2025-04-01
-doin' it all with 555s
-For April First, a guide to replace everything with 555 ICs.
-analog humor
-hw gem
+date: 2025-04-01
+title: doin' it all with 555s
+desc: For April First, a guide to replace everything with 555 ICs.
+tags: analog humor
+cats: hw gem
 ---
 # Doin' It With A 555: One Chip to Rule Them All
-![555 IC](~/555.avif "The venerable 555 IC (Swift.Hg, Wikimedia Commons)")
+![555 IC](./555.avif "The venerable 555 IC (Swift.Hg, Wikimedia Commons)")
 
 Humans and other foreign species, **welcome** to the most groundbreaking revelation in recent electronics history. For decades, engineers and hobbyists alike have believed, **unquestioning**, in the supremacy of microcontrollers, op-amps, transistors, and all those other fancy components -- only for me to tell you they can be replaced with **555 timer** ICs. _Every single one_.
 
@@ -28,7 +28,7 @@ We also know that microcontrollers implement logic gates -- AND, OR, NOT, NAND, 
 
 Microcontrollers have all these useless peripherals: UARTs, SPI, ADCs, DACs, timers, and even I2C. Still useless! Want to send a UART signal? Take two **555 timers**, configure one for the baud rate generation, and use the other to send and receive bits. **Boom. UART done.**
 
-With a worldwide electronics framework of **555**s, we won't need any ADCs. We wont need PWM or DACs. We'll have **555**s under _everything_, and they'll be **enough**.
+With a worldwide electronics framework of **555**s, we won't need any ADCs. We won't need PWM or DACs. We'll have **555**s under _everything_, and they'll be **enough**.
 
 Forget about fancy quad op-amp packages -- mess with them no longer. Replace them with a **stack of 555 timers**. You'll need at minimum five **555**s to handle decent signal amplification, but in their ubiquity, they won't mind you buying **more** and **more** and ~~as many as~~ _more than you need_. You may need to modify your power supply to handle the load (consider something more substantial than a 9V battery), but trust me, it's worth it. You'll never have to deal with the dreaded "saturation" problem again because your **555**s will just keep oscillating, forever. A signal that never, never ever, quits. Or you could use the **555**'s _astable mode_ to create an op-amp-like feedback loop if the store runs out of more **555**s to use as resistors and capacitors, which can be replaced by the same as I describe below!
 

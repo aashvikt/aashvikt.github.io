@@ -1,19 +1,19 @@
 ---
-2024-05-14
-makeshift touch sensitive led matrices
-A small demo of using fast-flickering LED matrices and LDRs for coarse touch sensing.
-hw sw demo led-matrix
-hw
+date: 2024-05-14
+title: makeshift touch sensitive led matrices
+desc: A small demo of using fast-flickering LED matrices and LDRs for coarse touch sensing.
+tags: hw sw demo led-matrix
+cats: hw
 ---
 # LED Matrices as touchscreens!
 
 I recently had the idea to use low-dpi displays and light level sensing to create a 'touchscreen' of sorts, by checking light conditions when different pixels were on.
 
-I decided to make a demo of my idea using the MAX7219-controlled 8x32 led matrix from [[Qlock|qlock]] (which later went into [[this|golway72]]!).
+I decided to make a demo of my idea using the MAX7219-controlled 8x32 led matrix from [Qlock](/posts/qlock) (which later went into [this](/posts/golway72)!).
 
-The demo here works by having an STM32f103 'Blue Pill' board rapidly illuminating each pixel of the display one after the other and use ubiquitous LDR resistors to check whether any light was sensed (after an initial ambient light calibration) at each moment. Here's an example clip:
+The demo here works by having an STM32f103 'Blue Pill' board rapidly illuminate each pixel of the display one after the other and use ubiquitous LDR resistors to check whether any light was sensed (after an initial ambient light calibration) at each moment. Here's an example clip:
 
-![led matrix display](~/display.avif)
+![led matrix display](./display.avif)
 
 By knowing which pixels' light was blocked from reaching the photoresistor, the program I wrote in STM32CubeIDE could send the computer, over serial, which cells were blocked. For synchronizing the sensing to work reliably, I ended up slowing down the LED speed drastically.
 

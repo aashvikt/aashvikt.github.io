@@ -1,9 +1,9 @@
 ---
-2025-12-17
-my posix shell static git webpage generator
-gitto!
-sw web
-sw draft
+date: 2025-12-17
+title: my posix shell static git webpage generator
+desc: gitto!
+tags: sw web
+cats: sw draft
 ---
 # gitto
 

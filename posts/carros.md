@@ -1,9 +1,9 @@
 ---
-2021-12-25
-carros: teaching motor driving and arduino
-Three simple robot cars for learning.
-robotics
-rb
+date: 2021-12-25
+title: carros: teaching motor driving and arduino
+desc: Three simple robot cars for learning.
+tags: robotics
+cats: rb
 ---
 # Carros, Carros-Obstacle, and Carros-BT
 Arduino is one of the most common platforms used to teach beginner robotics, with its easy-to-understand use of C, wide hardware compatibility, and intuitive abstractions allowing one to quickly get started making projects, whether self-taught or with an instructor, before, if ever, moving on to something more low-level and fast.
@@ -12,13 +12,11 @@ Two-wheeled car robots are a great way to introduce robotics concepts to learner
 
 I created three different variation of the classic robotic car to showcase a basic robot concept and provide a practical experience.
 
-You can view the source code and video links [**here**](https://github.com/aashvikt/Carros).
-
-## Carros
+## [Carros](https://youtu.be/Ga03a9FeM_I)
 The first project is a basic battery-powered two-wheeled robot, which serves as an introduction to motor driving. This robot relies on an Arduino Uno to control the two DC motors that power its wheels. Using a simple motor driver, the car is able to move forward, backward, and turn left or right based on the input signals from the Arduino, showing how the basic movements of a robot are achieved through actuators.
 
-## Carros-Obstacle
+## [Carros-Obstacle](https://youtu.be/FJIrCC7w1DI)
 The second robot switches to an Arduino Pro Mini, programmed using an FTDI UART adapter. This version adds more functionality with obstacle avoidance. It uses an HC-SR04 ultrasonic sensor mounted on a servo motor, the robot can detect obstacles in its path and take action to avoid them, favoring forward, then left, then right, and lastly backward movement. This is a basic demonstration of integration of additional forms of actuation and sensor into a robot.
 
-## Carros-BT
+## [Carros-BT](https://youtu.be/6DOudr9bmC4)
 The third version is a Bluetooth-controlled car that can be operated directly from a smartphone. It uses an HC-05 Bluetooth module, which receives commands from the smartphone via an app, changing speed and direction in different ways.

@@ -1,9 +1,9 @@
 ---
-2025-07-13
-ds_store and dotfiles on mac and in finder
-quickly stopping macos file-hell
-mac sw dotfiles
-sw
+date: 2025-07-13
+title: ds_store and dotfiles on mac and in finder
+desc: quickly stopping macos file-hell
+tags: mac sw dotfiles
+cats: sw
 ---
 # Avoiding .DS_Store Dotfile-Hell
 MacOS loves sprinkling hidden dotfiles in almost every folder, and, more annoyingly, in flash drives and networked discs. Thankfully, with a bit of work we can tame the filesystem to minimize the mess -- here's what I've done.

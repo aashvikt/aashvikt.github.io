@@ -1,9 +1,9 @@
 ---
-2025-05-08
-routing markdown for a single-page blog
-A blog post about how my single-page and dynamic, GitHub-based javascript website works.
-sw web js
-sw
+date: 2025-05-08
+title: routing markdown for a single-page blog
+desc: A blog post about how my single-page and dynamic, GitHub-based javascript website works.
+tags: sw web js
+cats: sw
 ---
 # My simple GitHub-based JS SPA blog
 
@@ -190,4 +190,4 @@ That's pretty much it: simple...
 - It **breaks** if GitHub or GitHub raw content URLs change.
 - It doesn't work on browser with cross-origin resource sharing or **javascript** disabled, and I personally know too many (rightfully!) from that >0.2%.
 
-So I'm leaving this here while I make something... [[static|shell-static-site]].
+So I'm leaving this here while I make something... [static](/posts/shell-static-site).

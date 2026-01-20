@@ -1,13 +1,13 @@
 ---
-2023-03-31
-minimate: on the shoulders of companions
-Small write-up for a companion robot I made for a competition.
-robotics
-rb
+date: 2023-03-31
+title: minimate: on the shoulders of companions
+desc: Small write-up for a companion robot I made for a competition.
+tags: robotics
+cats: rb
 ---
 # MiniMate
 
-Minimate [^1], developed for ATL Marathon '23 by Aashvik Tyagi and Vivaan Mansukhani, is an open-source companion robot to help people overcome depression.
+Minimate [^1], developed for ATL Marathon '23 by me and Vivaan Mansukhani, is an open-source companion robot to help people overcome depression.
 
 To start off, _depression is horrible_. Depression makes common tasks difficult and life seem uninteresting, and we'd rather it not be. In essence, what we want to is help those depressed.
 
@@ -23,7 +23,7 @@ It can be an adorable addition to anyone's life and might just be the perfect gi
 MiniMates can not only help keep everyone's spirits high with their limitless jokes and cool dance sequences but can also connect to Wi-Fi to answer your questions and aid you in your daily life by providing recent news, weather updates, et cetera, keeping children [^9] and elders [^10] [^11] entertained, connected and happy for long periods.
 
 We've created a base for others to build upon, with made multiple functions that can be modified, customised, and improved upon by others.
-All that we've worked on till now can be found [on our GitHub repository](https://github.com/aashvikt/minimate).
+All that we've worked on till now can be found on our GitHub repository (RIP, but [here's a video to learn more about MiniMate](https://youtu.be/C-nmJdpLueg)).
 
 
 [^1]: "On The Shoulders Of Companions" [title inspiration](https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants) signifying the contribution of company to mental well-being.

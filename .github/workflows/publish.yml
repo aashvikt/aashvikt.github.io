@@ -1,52 +1,59 @@
 name: build and publish site
 on:
-    push:
-        branches: [ "main" ]
-    workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout
-                uses: actions/checkout@v4
-            - name: Install runtime deps (envsubst)
-                run: sudo apt-get update && sudo apt-get install -y gettext
-            - name: cache cargo registry, git, bin and target
-                uses: actions/cache@v4
-                with:
-                    path: |
-                        ~/.cargo/registry
-                        ~/.cargo/git
-                        ~/.cargo/bin
-                        target
-                    key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-                    restore-keys: |
-                        ${{ runner.os }}-cargo-
-            - name: setup rust toolchain
-                uses: actions-rs/toolchain@v1
-                with:
-                    toolchain: stable
-                    override: true
-            - name: ensure cargo bin is on PATH
-                run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-            - name: install comrak if missing
-                run: |
-                    if [ ! -x "$HOME/.cargo/bin/comrak" ]; then
-                        cargo install --locked comrak
-                    else
-                        echo "comrak already available"
-                    fi
-            - name: build site
-                run: |
-                    chmod +x ./gen.sh
-                    ./gen.sh
-            - name: upload pages artifact
-                uses: actions/upload-pages-artifact@v4
-                with:
-                    path: ./public
-    deploy:
-        runs-on: ubuntu-latest
-        needs: build
-        steps:
-            - name: deploy to GitHub Pages
-                uses: actions/deploy-pages@v4
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: install runtime deps (envsubst)
+        run: sudo apt-get update && sudo apt-get install -y gettext
+      - name: cache cargo registry, git, bin and target
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            ~/.cargo/bin
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+      - name: setup rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - name: ensure cargo bin is on PATH
+        run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+      - name: install comrak if missing
+        run: |
+          if [ ! -x "$HOME/.cargo/bin/comrak" ]; then
+            cargo install --locked comrak
+          else
+            echo "comrak already available"
+          fi
+      - name: export short commit sha
+        run: echo "COMMIT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: build site
+        run: |
+          chmod +x ./gen.sh
+          ./gen.sh
+      - name: ensure .nojekyll present
+        run: touch public/.nojekyll
+      - name: upload pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./public
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: deploy to github pages
+        uses: actions/deploy-pages@v4
