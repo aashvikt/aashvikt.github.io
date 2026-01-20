@@ -1,9 +1,9 @@
 ---
-2024-12-21
-simplest python othello bot goes demented
-A post about a short and greedy python bot that plays othello for a competition. And another...
-sw othello comp
-sw gem
+date: 2024-12-21
+title: simplest python othello bot goes demented
+desc: A post about a short and greedy python bot that plays othello for a competition. And another...
+tags: sw othello comp
+cats: sw gem
 ---
 # Eagerthello
 ```

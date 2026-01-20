@@ -1,12 +1,12 @@
 ---
-2025-04-01
-doin' it all with 555s
-For April First, a guide to replace everything with 555 ICs.
-analog humor
-hw gem
+date: 2025-04-01
+title: doin' it all with 555s
+desc: For April First, a guide to replace everything with 555 ICs.
+tags: analog humor
+cats: hw gem
 ---
 # Doin' It With A 555: One Chip to Rule Them All
-![555 IC](~/555.avif "The venerable 555 IC (Swift.Hg, Wikimedia Commons)")
+![555 IC](./555.avif "The venerable 555 IC (Swift.Hg, Wikimedia Commons)")
 
 Humans and other foreign species, **welcome** to the most groundbreaking revelation in recent electronics history. For decades, engineers and hobbyists alike have believed, **unquestioning**, in the supremacy of microcontrollers, op-amps, transistors, and all those other fancy components -- only for me to tell you they can be replaced with **555 timer** ICs. _Every single one_.
 

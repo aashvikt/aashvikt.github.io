@@ -1,13 +1,13 @@
 ---
-2022-03-22
-kida: to make a quadruped
-A post about a janky robotic insect I made.
-robotics insect quadruped
-rb gem
+date: 2022-03-22
+title: kida: to make a quadruped
+desc: A post about a janky robotic insect I made.
+tags: robotics insect quadruped
+cats: rb gem
 ---
 # Killer Insect Droid Automation, or KIDA
 
-![robot insect side view](~/kida.avif)
+![robot insect side view](./kida.avif)
 
 I built a small (~~groundbreaking masterpiece~~) robot called KIDA. It's a quadruped with some fun inspiration from [Martedi's Walter Photovore](https://www.hackster.io/studikasus/walter-the-arduino-photovore-insect-708207) and [BEAM robotics](http://solarbotics.net). The base is a power bank, and it's powered by 5 MG90 servos - one for each leg and one to rotate the hip of the hind leg. I used an Arduino Nano and HC05 Bluetooth module mounted on a breadboard.
 
@@ -19,8 +19,8 @@ For a sneak peek at the droid in action, please indulge in the video below. I pr
 
 Now that I have a 3d printer, I'm working on making another quadruped. A 12dof quadruped with servo actuators, inspired by the Petoi robots. Here's a preview of the protoboard I just soldered together for the power distribution and voltage regulation for the servos and microcontroller:
 
-![proto board with soldered wires](~/12dof-proto.avif)
+![proto board with soldered wires](./12dof-proto.avif)
 
-It might not look like much right now, but just wait till there's a hundred scuttling towards you. 
+It might not look like much right now, but just wait till there's a hundred of v2 scuttling towards you. 
 
 ;)

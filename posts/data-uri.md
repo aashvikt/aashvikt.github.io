@@ -1,9 +1,9 @@
 ---
-2025-11-11
-data uris are pretty cool
-a little bit about data uris
-sw web
-sw draft
+date: 2025-11-11
+title: data uris are pretty cool
+desc: a little bit about data uris
+tags: sw web
+cats: sw draft
 ---
 # data uri
 

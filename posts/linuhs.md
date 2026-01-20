@@ -1,15 +1,15 @@
 ---
-2023-11-05
-linuhs: starting to follow lines
-I made a line follower for a competition.
-lfr robotics 3dp
-rb
+date: 2023-11-05
+title: linuhs: starting to follow lines
+desc: I made a line follower for a competition.
+tags: lfr robotics 3dp
+cats: rb
 ---
 # Linuhs
 
 This is to document experience till now with building a line following robot \[Linuhs\] and taking it to win a competition.
 
-![robot view](~/linuhs.avif)
+![robot view](./linuhs.avif)
 
 ## hardware
 
@@ -20,7 +20,7 @@ Two N20 motors, driven by a DRV8833 motor driver, were rated for 1000rpm at 6V. 
 For line following, I used an HY-S301 sensor array, which has 8 IR emitter-transistor pairs to detect ground color via reflected IR light. While often mislabelled online as a Pololu QTR sensor, it's a basic analog sensor with power, ground, enable, and 8 analog outputs.
 Here's a picture of the hand-wired sensor array I made on a protoboard and originally intended on using before it broke:
 
-![sensor array on protoboard](~/proto-sensor.avif)
+![sensor array on protoboard](./proto-sensor.avif)
 
 The robot was powered by a 9V rechargeable battery and regulated to 3.3V for the MCU and sensors by an LM2596 buck converter.
 
@@ -36,7 +36,7 @@ A thin 3D-printed frame held the sensor array, protoboard, battery and motors mo
 
 I had 2 tracks, both 4'x4', flex-printed. I made the designs myself, and they were very useful in tuning and preparing.
 
-![robot following line track on floor](~/following.avif)
+![robot following line track on floor](./following.avif)
 
 ## competing
 

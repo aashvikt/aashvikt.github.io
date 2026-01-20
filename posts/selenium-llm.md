@@ -1,9 +1,9 @@
 ---
-2024-03-08
-trying out selenium with llms
-About a small LLM python interface I made to try Selenium.
-sw web python
-sw
+date: 2024-03-08
+title: trying out selenium with llms
+desc: About a small LLM python interface I made to try Selenium.
+tags: sw web python
+cats: sw
 ---
 # Trying out Selenium (python) with an LLM Site
 

@@ -1,20 +1,20 @@
 ---
-2025-12-09
-jelly star and the universal android debloater
-I experience, review, and debloat my new Unihertz Jelly Star, the world's smallest Android 13 smartphone.
-phone
-misc
+date: 2025-12-09
+title: jelly star and the universal android debloater
+desc: I experience, review, and debloat my new Unihertz Jelly Star, the world's smallest Android 13 smartphone.
+tags: phone
+cats: misc
 ---
 # My phone
 Since October 19th of this year, I've been using the [Jelly Star](https://www.unihertz.com/products/jelly-star), a small bean-shaped piece of plastic that happens to be the smallest smartphone that runs Android 13.
 
-![jelly star phone leaning against wall](~/wall.avif)
+![jelly star phone leaning against wall](./wall.avif)
 
 ## The Small J...
 
 ### context
 The Jelly Star is a ≲$200 product from a Shanghainese smartphone [manufacturer](https://en.wikipedia.org/wiki/Unihertz):
-![unihertz logo on back of phone](~/unihertz-logo.avif)
+![unihertz logo on back of phone](./unihertz-logo.avif)
 
 It's looked at mainly by [the "dumbphone" community](https://www.reddit.com/r/dumbphones), but usually dismissed for being just a small Android smartphone that doesn't necessarily restrict you from doing anything addictive on it. It does still make things more difficult -- scrolling is less pleasurable, and many applications are harder to navigate, so some find their screentime reduced by switching to the 'Star -- but admittedly, I don't have much of a problem with screentime ||on phones...|| and hence am probably not the target audience for this phone.
 
@@ -23,11 +23,11 @@ Personally, I'm coming from an iPhone 8, before which I used an iPhone 7, both o
 ### comments on size
 The Small J has a 3" (diagonal) screen of 854 by 480 pixels. This reads like a low resolution, but it's actually a __very high__ pixel density at this size looking extremely sharp at around 330 PPI -- that's around _triple_ the pixel density of a 32" 4K monitor. It's not the brightest display, honestly, but it gets by alright.
 
-![top of jelly star phone](~/top.avif)
+![top of jelly star phone](./top.avif)
 
 In terms of overall phone size, the Small J is <5cm wide and ~9.5cm tall.
 
-![jelly star phone thickness](~/thickness.avif)
+![jelly star phone thickness](./thickness.avif)
 
 Its small size requires it to be disproportionately thick -- at ≲2cm thick, the Small J can feel very much like a bean!
 
@@ -41,7 +41,7 @@ EK@#@>yjK@@22ZKK#Q@2
 ```
 
 ### battery life
-![jelly star on table](~/table-edge.avif)
+![jelly star on table](./table-edge.avif)
 
 I haven't seen praise for this phone's battery elsewhere, but in my opinion, the battery life on the Small J is awesome. It lasts me two days, or at the minimum, a full day of normal use, and it really could last longer. According to [a more formal benchmark](https://www.pcmag.com/reviews/unihertz-jelly-star), it gets 7 hours of streaming a YouTube video over Wi-Fi at max brightness, but I highly doubt anyone is buying this phone to do that -- of course, my own experience and aforementioned numbers, too, are influenced by _what_ I do on my phone.
 
@@ -59,13 +59,13 @@ The Small J has the fastest, most accurate face ID unlock I've ever seen. It's s
 The other method of unlock, the fingerprint reader, on the other hand, is hot trash. I can count on my fingers the number of times it has worked for me. Even though my fingerprints aren't in perfect condition, I am also not the only one facing this problem.
 
 ### 'n more
-- It has a **headphone jack**! ![headphone jack with cable connected on phone](~/headphone-jack.avif "Another rare inclusion, and audio quality out of it is decent!")
+- It has a **headphone jack**! ![headphone jack with cable connected on phone](./headphone-jack.avif "Another rare inclusion, and audio quality out of it is decent!")
 - It has lights on the back! They flash about when your phone rings, but I didn't set them up again after debloating my phone.
-    ![back of phone showing LEDs 1](~/side-back-back.avif) ![back of phone showing LEDs 2](~/side-back-front.avif)
-- It comes with a **lanyard**! ![adding lanyard](~/lanyard-toothpick.avif "Installation requires something pointy") ![catching lanyard](~/lanyard-catch.avif "Incredible utility! ")
+    ![back of phone showing LEDs 1](./side-back-back.avif) ![back of phone showing LEDs 2](./side-back-front.avif)
+- It comes with a **lanyard**! ![adding lanyard](./lanyard-toothpick.avif "Installation requires something pointy") ![catching lanyard](./lanyard-catch.avif "Incredible utility! ")
 - The rubber case it comes with can get pretty disgusting. I might look into 3d printing one later.
-- It has an "action button" ![red button on side of phone](~/red-button.avif "I've got it set to turn the flashlight on! Also in view, is the unorthodox placement of USB-C: on the side")
-- It supports an SD Card along with the SIM. ![sd card and sim holder](~/sim.avif)
+- It has an "action button" ![red button on side of phone](./red-button.avif "I've got it set to turn the flashlight on! Also in view, is the unorthodox placement of USB-C: on the side")
+- It supports an SD Card along with the SIM. ![sd card and sim holder](./sim.avif)
 
 ## Review
 Overall, from my two months of initial excitement, I really like this phone. It feels great to have gone from dinner plate to pocket watch; admittedly I don't use my phone much and am hence probably not the target audience for a "dumb" phone, but downsizing is always nice and switching to Android, at least for me, is a plus for how open it is -- transferring files to or from my computer is effortless over MPT.
@@ -107,7 +107,7 @@ And saved it permanently with `funcsave uad`. That's how smooth the `fish` user 
 ---
 
 ### using uad
-I enabled Developer Mode and USB Debugging on my phone as described on the UAD GitHub, and after plugging my phone in to my computer, I removed everything from the "Recommended" and "Advanced" category in the now-functional UAD, but I soon realized I'd nuked the default Android keyboard and hastily undid my changes, a process made quite simple with UAD's simple UI.
+I enabled Developer Mode and USB Debugging on my phone as described on the UAD GitHub, and after plugging my phone in to my computer, I removed everything from the "Recommended" and "Advanced" category in the now-functional UAD, but I soon realized I'd _nuked the default Android keyboard_ and hastily undid my changes, a process made quite simple with UAD's straightforward UI.
 
 I then removed just packages from the "Recommended" category next, and additionally the `com.agui.update` and `com.agui.update.overlay` packages (reported by users to be spyware, but more likely to be general bloatware -- worth removing either way).
 

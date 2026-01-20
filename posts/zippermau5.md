@@ -1,13 +1,13 @@
 ---
-2024-10-27
-zippermau5, my micromouse
-A post about ZIPPERMAU5, a WIP micromouse robot using a custom pcb, teensy 4.1, brushed dc motors, and time-of-flight sensors.
-micromouse robotics pcb
-rb gem
+date: 2024-10-27
+title: zippermau5, my micromouse
+desc: A post about ZIPPERMAU5, a WIP micromouse robot using a custom pcb, teensy 4.1, brushed dc motors, and time-of-flight sensors.
+tags: micromouse robotics pcb
+cats: rb gem
 ---
 # zippermau5, micromouse robot
 
-![software view of micromouse pcb](~/pcb.png)
+![software view of micromouse pcb](./pcb.png)
 
 ## About
 _ZIPPERMAU5_ is a [micromouse](https://en.wikipedia.org/wiki/micromouse) robot that I'm currently working on, and have been since around june of this year. Check out [the zippermau5 github](https://github.com/aashvikt/zippermau5)!
@@ -36,6 +36,6 @@ I hope I'll take it to a competition some day!
 - 2025 is almost over, and I don't think I'll be picking this project back up due to the crippling hardware issue, lack of motivation and disgust at jank in something I'd wanted to be "perfect".
 
 ## Gallery
-![front of micromouse pcb](~/front.png "Teensy, VL53s, IMU, buttons, lights, and mounts")
-![back of micromouse pcb](~/back.png "The motor driver to replace the connections I forgot to break out")
-![pro soldering on micromouse pcb](~/pro-solder.png "Some impressive soldering")
+![front of micromouse pcb](./front.png "Teensy, VL53s, IMU, buttons, lights, and mounts")
+![back of micromouse pcb](./back.png "The motor driver to replace the connections I forgot to break out")
+![pro soldering on micromouse pcb](./pro-solder.png "Some impressive soldering")

@@ -1,9 +1,9 @@
 ---
-2025-12-06
-sonshi-style external keyboards with systemd
-I set up a python systemd service to disable my internal keyboard when an external one's connected.
-sw linux
-sw
+date: 2025-12-06
+title: sonshi-style external keyboards with systemd
+desc: I set up a python systemd service to disable my internal keyboard when an external one's connected.
+tags: sw linux
+cats: sw
 ---
 # Using my Keyboard Sonshi-Style with systemd on Debian
 

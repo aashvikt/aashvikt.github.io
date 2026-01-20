@@ -1,9 +1,9 @@
 ---
-2023-03-31
-minimate: on the shoulders of companions
-Small write-up for a companion robot I made for a competition.
-robotics
-rb
+date: 2023-03-31
+title: minimate: on the shoulders of companions
+desc: Small write-up for a companion robot I made for a competition.
+tags: robotics
+cats: rb
 ---
 # MiniMate
 

@@ -1,9 +1,9 @@
 ---
-2024-09-14
-quick mc mod version switching from the shell
-A quick and easy shell script so many find themselves needing.
-sw shell games
-sw
+date: 2024-09-14
+title: quick mc mod version switching from the shell
+desc: A quick and easy shell script so many find themselves needing.
+tags: sw shell games
+cats: sw
 ---
 # Fast Mod Switching from the Shell
 If you're going to waste time, like I [sometimes do](https://en.wikipedia.org/wiki/Peer_pressure), playing __multiple versions__ of [a video game](https://en.wikipedia.org/wiki/Minecraft), with __different worlds__ each needing __different sets of mods__, why not make it effortless to switch between sets of mods?

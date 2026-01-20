@@ -1,9 +1,9 @@
 ---
-2025-10-22
-commonmark+comrak cheatsheet
-A cheatsheet for me to reference while writing blogposts.
-sw web md
-misc gem draft
+date: 2025-10-22
+title: commonmark+comrak cheatsheet
+desc: A cheatsheet for me to reference while writing blogposts.
+tags: sw web md
+cats: misc gem draft
 ---
 # commonmark (extended) cheatsheet
 Specifically, the parts I forget.
@@ -12,11 +12,11 @@ Specifically, the parts I forget.
 ignored at beginning:
 ```
 ---
-2025-10-22
-title
-Longer description.
-tag1 tag2 tag3
-gem draft sw hw rb misc
+date: 2025-10-22
+title: title
+desc: Longer description.
+tags: tag1 tag2 tag3
+cats: gem draft sw hw rb misc
 ---
 ```
 
@@ -187,9 +187,9 @@ later, do:
 [^fn1]: footnote content
 
 ## wikilinks
-`[[text content|wikilink]]`  
-like `[[my iems|blon-bl03]]`  
-shown [[my iems|blon-bl03]]  
+`[text content](/posts/wikilink)`  
+like `[my iems](/posts/blon-bl03)`  
+shown [my iems](/posts/blon-bl03)  
 and  
 use `(^|[^!])\[[^\]]+\]\(\/[^)]*\)` regex to find things you can 'ikilinkify.
 
