@@ -15,12 +15,12 @@
         <link rel="alternate" type="application/atom+xml" title="atom feed" href="/atom.xml">
         <link rel="webmention" href="https://webmention.io/aashvik.com/webmention">
         <style>:root {
-    color-scheme: light dark;
+color-scheme: light dark;
     --fg: light-dark(#1a1a1a, #eaeaea);
     --bg: light-dark(#fafafa, #121212);
     --a: light-dark(#0050b3, #4da3ff);
     --t: light-dark(#0072ff54, #3a72e899);
-    --cbg: light-dark(#ddd, #222);
+    --cbg: light-dark(#ddd, #333);
     --m: light-dark(#555, #aaa);
     &:has(#light:checked) { color-scheme: light; };
     &:has(#dark:checked) { color-scheme: dark; };
@@ -34,7 +34,9 @@ body { font: 14px "DejaVu Sans", sans-serif; hyphens: auto; overflow-wrap: break
 a { color: var(--a); }
 a.anchor { text-decoration: none; }
 main :not(h1:first-of-type) > a.anchor::before { content: "§"; margin-right: 0.5ch; }
-pre, code, span[data-math-style] { font-family: monospace; background-color: var(--cbg); }
+pre, code, span[data-math-style] { font-family: monospace; }
+pre { padding: 1ch; outline: 0.1ch dashed var(--fg); }
+:not(pre)>code { background: var(--cbg); }
 img, video, audio, iframe, pre, table, figure { width: fit-content; max-width: 100%; overflow-x: auto; margin: 0px auto; display: block; }
 figure { display: table; align-self: flex-start; }
 figcaption { color: var(--m); display: table-caption; caption-side: bottom; margin-top: 1ch; }

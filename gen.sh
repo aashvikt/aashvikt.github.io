@@ -30,8 +30,7 @@ for md in $(
     post_dir=${md%.md}
     post_slug="$(echo ${post_dir#public/posts/} | sed 's/[$"'"'"']//g')"
 
-    # TOD: outline/schema/TOC-maker for select webpages and all feed elements
-    # TOD: webmentions
+    # TODO: outline/schema/TOC-maker for select webpages and all feed elements
 
     metalines="$(awk '/^---$/ {if (s==0) {s=NR; next} else {e=NR; print s+1 "," e-1; exit}}' "$md")"
     colsep="[[:space:]]*:[[:space:]]*"
@@ -148,7 +147,7 @@ mkdir -p public/tags
 post_title=tags \
 post_desc="post tags and categories" \
 post_tags_comma="tags, categories" \
-post_content="<h1>tags</h1><nav>${tags_page%<br>}</nav>" \
+post_content="<h1>Tags</h1><nav>${tags_page%<br>}</nav>" \
 envsubst < template/index.html > "public/tags/index.html"
 
 navstyle="<style>/*main>nav>p>span{text-decoration:underline}*/
@@ -172,7 +171,7 @@ mkdir -p public/drafts/
 post_title=drafts \
 post_desc="drafts and unindexed posts" \
 post_tags_comma="drafts, posts, wip" \
-post_content="<h1>drafts</h1>
+post_content="<h1>Drafts</h1>
 ${navline} or <a href=/>published</a>.</p></nav>
 <nav>${drafts}</nav>" \
 head_extension="$navstyle" \
@@ -188,7 +187,7 @@ post_title="gen.sh"    \
 post_desc="static site generator" \
 post_tags_comma="generator, script, ssg" \
 post_content="$(printf '# gen.sh\n```sh\n%s\n```' "$(cat gen.sh)" | comrak --syntax-highlighting none)" \
-head_extension="<style>body { max-width: 100% }</style>" \
+head_extension="<style>body { max-width: 90% }</style>" \
 envsubst < template/index.html > public/gen.sh/index.html
 
 post_title="404 not found" \

@@ -693,6 +693,6 @@ The site works great! I've got GitHub Actions [set up](https://github.com/aashvi
 
 And most importantly, I understand the script's one file end to end, which is, for me, the entire point.
 
-<!-- Wow, so I can stop messing with my site now! Finally, right? It's complete. Tell me it's complete... -->
+<!-- Many lines! Not surprising given te feed templates and abrupt code blocks which I directly pasted in :)
 
-<!-- Six hundred and eighty-one lines? Whuh... I do suppose that's mostly the feed templates which I pasted in, hehe, and the long, abrupt code blocks nearly one-to-one with the actual script, so it does make sense... -->
+So I can stop messing with my site now! Finally, right? It's complete. Tell me it's done... ->>
