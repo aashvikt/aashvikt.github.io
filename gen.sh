@@ -30,7 +30,7 @@ for md in $(
     post_dir=${md%.md}
     post_slug="$(echo ${post_dir#public/posts/} | sed 's/[$"'"'"']//g')"
 
-    # TODO: outline/schema/TOC-maker for select webpages and all feed elements
+    # TODO: add table of contents to rss too
 
     metalines="$(awk '/^---$/ {if (s==0) {s=NR; next} else {e=NR; print s+1 "," e-1; exit}}' "$md")"
     colsep="[[:space:]]*:[[:space:]]*"
@@ -74,6 +74,32 @@ $(
         s@<img([^>]*?)\s+src="([^"]+\.(mp4|mov|ogv|webm|m4v|mkv|avi|mpg|mpeg))"[^>]*/?>@<video controls src="\2"\1></video>@g
         s@<img([^>]*?)\s+src="([^"]+\.(mp3|wav|ogg|aac|m4a|flac))"[^>]*/?>@<audio controls src="\2"\1></audio>@g
         s@<span class="spoiler">@<span class="spoiler" tabindex="0">@g
+    ' \
+    | awk '
+        BEGIN { toc=""; prev=0; indent=""; body="" }
+        /^<h[1-6]/ {
+            level=substr($0,3,1)+0; id=""
+            if(match($0,/id="[^"]+"/)) id=substr($0,RSTART+4,RLENGTH-5)
+            if(id) {
+                txt=$0; sub(/^<h[1-6][^>]*>/,"",txt); sub(/<\/h[1-6]>$/,"",txt); gsub(/<[^>]+>/,"",txt)
+                if(!prev) { toc=toc"<ul>\n"; indent="  "; toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  " }
+                else if(level>prev) { toc=toc indent"<ul>\n"; indent=indent"  "; toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  " }
+                else if(level==prev) { indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"; toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  " }
+                else { indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"; for(i=level;i<prev;i++) { indent=substr(indent,1,length(indent)-2); toc=toc indent"</ul>\n"; indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n" }; toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  " }
+                prev=level
+            }
+        }
+        { body = body $0 "\n" }
+        END {
+            if(prev>0) {
+                indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"
+                for(i=1;i<prev;i++) { indent=substr(indent,1,length(indent)-2); toc=toc indent"</ul>\n"; indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n" }
+                toc=toc"</ul>\n"
+                toc_html = "<nav class=\"toc\">\n" toc "</nav>"
+                gsub(/<pre[^>]*><code class="language-toc">[^<]*<\/code><\/pre>/, toc_html, body)
+            }
+            printf "%s", body
+        }
     '
 )
 <p><a href='mailto:comments&#64;aashvik.com?subject=$(

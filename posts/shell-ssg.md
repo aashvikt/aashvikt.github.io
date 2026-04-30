@@ -12,6 +12,9 @@ So, after a few months of making and breaking different static site generators a
 
 Please welcome, while it lasts, before another web fiddling session renders it obsolete: my very site-specific build script, a whole lot of string concatenation! Here's [`gen.sh`](/gen.sh), a static-site-generating script written in shell to turn a directory of markdown files and other resources into a complete blog website with tags, RSS, Atom, and JSON feeds, a sitemap, drafts, and more.
 
+```toc
+```
+
 ## What do?
 
 `gen.sh` builds my static site, from handwritten HTML and CSS which the script pieces together. The posts are written in markdown which it renders to HTML.
@@ -165,7 +168,7 @@ URLs for images and links matching `./*` turn into `/assets/post_slug/*`, lettin
 s@(<(img|a)[^>]*[[:space:]](src|href)=[\"'\'']?)\.@\1/assets/'"$post_slug"'@g
 ```
 
-### "Wow, that's a lot of non-standard markdown functionality!"
+### "wow, that's a lot of non-standard markdown functionality!"
 
 I agree! I wrote the `draft` post [`/posts/cmrk-cheatsheet`](/posts/cmrk-cheatsheet) as a reference for the first few times I'd use these structures, and also to tune this site's CSS.
 

@@ -6,7 +6,12 @@ tags: sw web md
 cats: misc gem draft
 ---
 # commonmark (extended) cheatsheet
-Specifically, the parts I forget.
+Specifically, the parts I forget. May be incomplete...
+
+## table of contents
+just a code block with toc as language:
+```toc
+```
 
 ## frontmatter
 ignored at beginning:

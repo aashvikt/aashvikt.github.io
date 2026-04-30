@@ -13,6 +13,9 @@ img: ./meerkat.avif
 
 Today were my [national](https://aiforgood.itu.int/event/robotics-for-good-youth-challenge-india/) [finals](https://s41721.pcdn.co/wp-content/uploads/2021/06/ITU_Junior_match_schedule.pdf) (the last stage before a [Swiss grand finale](https://aiforgood.itu.int/event/robotics-for-good-youth-challenge-grand-finale-2025/) and after a round of video-based preliminaries) of the [Robotics for Good Youth challenge](https://aiforgood.itu.int/robotics-for-good-youth-challenge/) at the Mobile Congress.
 
+```toc
+```
+
 ## challenge
 
 The challenge, an abstraction of a natural calamity scenario where technology would be needed for disaster response, was very well documented in [an incredible rulebook](https://s41721.pcdn.co/wp-content/uploads/2021/06/Challenge-Rulebook.pdf), taking place on the game board, a large, precisely specified rectangle (roughly a 1.4 meter square), with all locations, dimensions, coordinates, colors, and materials given well in advance.

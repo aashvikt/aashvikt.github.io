@@ -11,6 +11,9 @@ Since October 19th of this year, I've been using the [Jelly Star](https://www.un
 
 ![jelly star phone leaning against wall](./wall.avif)
 
+```toc
+```
+
 ## The Small J...
 
 ### context

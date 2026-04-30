@@ -9,7 +9,8 @@ cats: sw
 
 If you're reading this, my website is likely no longer a javascript SPA! But let us posit that it still is. Please, for this post, we're at [commit `ca413ad`](https://github.com/aashvikt/aashvikt.github.io/commit/ca413ad) of my GitHub Pages repo. All it contains is a favicon, a `CNAME` file, a `license.md`, and [**index.html**](https://raw.githubusercontent.com/aashvikt/aashvikt.github.io/ca413ad/index.html). Voyez its workings!
 
----
+```toc
+```
 
 ## Structure
 
