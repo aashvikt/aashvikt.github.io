@@ -36,8 +36,9 @@ a.anchor { text-decoration: none; }
 main :not(h1:first-of-type) > a.anchor::before { content: "§"; margin-right: 0.5ch; }
 pre, code, span[data-math-style] { font-family: monospace; }
 pre, nav.toc { padding: 1ch; outline: 0.1ch dashed var(--fg); }
+nav.toc>ul { list-style: none; padding: 0; margin: 0; }
 :not(pre)>code { background: var(--cbg); }
-img, video, audio, iframe, pre, table, figure { width: fit-content; max-width: 100%; overflow-x: auto; margin: 0px auto; display: block; }
+img, video, audio, iframe, pre, nav.toc, table, figure { width: fit-content; max-width: 100%; overflow-x: auto; margin: 0px auto; display: block; }
 figure { display: table; align-self: flex-start; }
 figcaption { color: var(--m); display: table-caption; caption-side: bottom; margin-top: 1ch; }
 table { border-collapse: collapse; }
