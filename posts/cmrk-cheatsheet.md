@@ -1,11 +1,11 @@
 ---
 date: 2025-10-22
-title: commonmark+comrak cheatsheet
+title: commonmark+comrak gen.sh cheatsheet
 desc: A cheatsheet for me to reference while writing blogposts.
 tags: sw web md
 cats: misc gem draft
 ---
-# commonmark (extended) cheatsheet
+# comrak x gen.sh cheatsheet
 Specifically, the parts I forget. May be incomplete...
 
 ## table of contents

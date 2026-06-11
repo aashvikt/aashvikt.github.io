@@ -1,8 +1,7 @@
 ---
-date: 2026-02-27
-title: pretty feeds
+date: 2026-05-27
+title: COMING SOON, PRETTY FEEDS
 desc: pretty feeds
 tags: ssg
 cats: sw gem draft
 ---
-# :>

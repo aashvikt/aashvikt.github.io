@@ -1,6 +1,6 @@
 ---
 date: 2025-11-11
-title: data uris are pretty cool
+title: COMING SOON, data uris are pretty cool
 desc: a little bit about data uris
 tags: sw web
 cats: sw gem draft

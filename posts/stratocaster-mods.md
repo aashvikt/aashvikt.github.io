@@ -1,6 +1,6 @@
 ---
 date: 2025-06-13
-title: squier bullet stratocaster mods
+title: COMING SOON, squier bullet stratocaster mods
 desc: 3d-printing picks for guitars and modding my stratocaster
 tags: guitar 3dp
 cats: misc draft

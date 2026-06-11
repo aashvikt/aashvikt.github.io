@@ -7,7 +7,7 @@ cats: misc
 img: ./case.avif
 ---
 # I built a computer
-I [built](https://youtu.be/YVjWz2rc13A) my first PC. It's pretty easy to do this, like lego with heavy metal parts and only a few combinations.
+I [built](https://youtu.be/YVjWz2rc13A) my first PC. It's pretty easy to do this, like lego with heavy metal pieces but only a few possible part combinations.
 
 ![ram](./ram.avif)
 

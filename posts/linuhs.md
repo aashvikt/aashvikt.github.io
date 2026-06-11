@@ -7,10 +7,12 @@ cats: rb
 img: ./linuhs.avif
 ---
 # Linuhs
+![robot view](./linuhs.avif)
 
 This is to document experience till now with building a line following robot \[Linuhs\] and taking it to win a competition.
 
-![robot view](./linuhs.avif)
+```toc
+```
 
 ## hardware
 

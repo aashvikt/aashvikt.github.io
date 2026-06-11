@@ -30,8 +30,6 @@ for md in $(
     post_dir=${md%.md}
     post_slug="$(echo ${post_dir#public/posts/} | sed 's/[$"'"'"']//g')"
 
-    # TODO: add table of contents to rss too
-
     metalines="$(awk '/^---$/ {if (s==0) {s=NR; next} else {e=NR; print s+1 "," e-1; exit}}' "$md")"
     colsep="[[:space:]]*:[[:space:]]*"
 
@@ -68,8 +66,8 @@ $(
         --extension alerts,autolink,description-lists,footnotes,greentext,math-code,math-dollars,multiline-block-quotes,spoiler,strikethrough,subscript,superscript,table,tasklist,underline,wikilinks-title-before-pipe \
         ${md} \
     | sed -z -E '
-        s@((<img[^>]*[[:space:]]*/?>[[:space:]]*){2,})@<div style="display:flex;gap:1ch;">\1</div>@g
-        s@<img([^>]*)title="([^"]+)"([^>]*)>@<figure><img\1title="\2"\3><figcaption>\2</figcaption></figure>@g
+        s@(<p>)?((<img[^>]*[[:space:]]*/?>[[:space:]]*){2,})(</p>)?@<div style="display:flex;gap:1ch;">\2</div>@g
+        s@(<p>)?<img([^>]*)title="([^"]+)"([^>]*)>(</p>)?@<figure><img\2title="\3"\4><figcaption>\3</figcaption></figure>@g
         s@(<(img|a)[^>]*[[:space:]](src|href)=[\"'\'']?)\.@\1/assets/'"$post_slug"'@g
         s@<img([^>]*?)\s+src="([^"]+\.(mp4|mov|ogv|webm|m4v|mkv|avi|mpg|mpeg))"[^>]*/?>@<video controls src="\2"\1></video>@g
         s@<img([^>]*?)\s+src="([^"]+\.(mp3|wav|ogg|aac|m4a|flac))"[^>]*/?>@<audio controls src="\2"\1></audio>@g
@@ -131,6 +129,7 @@ envsubst < template/index.html > "${post_dir}/index.html"
     <summary type='html'><![CDATA[
         $([ -n "$post_image" ] && echo "<img src='${post_image}'>")
         <p>${post_desc}</p>
+        $(sed -n '/<nav class="toc">/,/<\/nav>/{p;/<\/nav>/q}' public/posts/${post_slug}/index.html)
     ]]></summary>
     $(echo "$post_tags" | sed -E "s/([^ ]+)/<category term='\1' label='\1' scheme='https:\/\/aashvik.com\/tags#\1'\/>/g")
 </entry>"
@@ -207,6 +206,21 @@ date_8601=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
 items_atom="${atom#
 }" \
 envsubst < template/atom.xml > public/atom.xml
+
+
+mkdir public/photos
+post_title="photo gallery"    \
+post_desc="photo showcase" \
+post_tags_comma="photography, gallery" \
+post_content="<h1>The gallery is coming soon :></h1>" \
+envsubst < template/index.html > public/photos/index.html
+
+mkdir public/feedroll
+post_title="feedroll"    \
+post_desc="public static blogroll feed reader" \
+post_tags_comma="feed, blogroll" \
+post_content="<h1>My feedroll is coming soon :></h1>" \
+envsubst < template/index.html > public/feedroll/index.html
 
 mkdir public/gen.sh
 post_title="gen.sh"    \

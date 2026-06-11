@@ -1,6 +1,6 @@
 ---
 date: 2025-12-17
-title: my posix shell static git webpage generator
+title: COMING SOON, my posix shell static git webpage generator
 desc: gitto!
 tags: sw web
 cats: sw gem draft

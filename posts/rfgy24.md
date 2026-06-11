@@ -45,7 +45,7 @@ We had some days before the finals after qualifying the prelims, and due to the 
 
 ![3d model of the new robot](./cad-main.avif "CAD of the new robot -- built like a wedge, so the castor is not only on the right height for the wheels, but also mounted on a surface parallel to the ground")
 
-This version was tiny, smaller than the palm of my hand, **about 9cm on the longer side**, featuring N20 motors, a DRV8833, multiple ToF sensors (intended to allow calibration against walls), a Raspberry Pi Zero, an OV5647 Pi camera, a caster ball. The rulebook did limited changes between prelims and finals to "30%" (??), but since the original video had no real sense of scale, this passed the "inspection" step during the finals anyway.
+This version was tiny, smaller than the palm of my hand, **about 9cm on the longer side**, featuring N20 motors, a DRV8833, multiple ToF sensors (intended to allow calibration against walls), a Raspberry Pi Zero, an OV5647 Pi camera, and a caster ball. The rulebook did limited changes between prelims and finals to "30%" (??), but since the original video had no real sense of scale, this passed the "inspection" step during the finals anyway.
 
 ![symmetrical new robot 3d model top](./cad-top.avif "The battery was to sit in the hollow, with the Pi ziptied on and camera attached, out front, on the claw")
 ![symmetrical new robot 3d model bottom](./cad-bottom.avif "You can see the caster mount made to be parallel against the floor, and where the motors fit in, with space for a driver board under the battery")
@@ -77,7 +77,7 @@ Predictably, things didn't work out, because code like this doesn't "just happen
 
 On the finals day, things obviously are absolutely not working. I'm told I _have_ to go, along with the rest of my previously uninvolved team. So I go.
 
-My V2 robot's wired up all intricate, with the Pi and a DRV8833, camera and ToFs, everything attached and nothing functional. It's the morning and we've reached there, we've got maybe 20 minutes? I don't remember, I'm writing this post much later in retrospect and looking back it's still a bit fuzzy (hindsight is _not_ 20-20).
+My V2 robot's wired up all intricate, with the Pi and a DRV8833, camera and ToFs, everything attached and nothing functional. It's the morning and we've reached there, we've got maybe 20 minutes? I don't remember, I'm writing this post in retrospect much later and looking back it's still a bit fuzzy (hindsight is _not_ 20-20).
 
 I'd brought an Arduino Nano, a TB6612FNG and my soldering set with me. Decide I've got nothing to lose and rip out the Pi's connections, cold, while my iron warms, then stick the 328p in there with just power and the TB66 connected to it. I borrow glue and hide the Nano under the Pi, leaving the Pi connected to power and camera to make it look like it's still driving operations.
 

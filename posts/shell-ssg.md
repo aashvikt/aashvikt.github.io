@@ -682,9 +682,9 @@ And that's about all it takes to make the script generate a full website.
 
 ## Why shell?
 
-Well, _not_ really because it's portable, as despite being a "POSIX script", most of the `date` and `sed` tricks I do don't work on the BSD versions of those commands, with comrak, additionally, being a dependency.
+Well, _not_ really because it's portable, as despite being a "POSIX script", most of the `date` and `sed` tricks I do don't work on the BSD versions of those commands, and comrak is an additional dependency.
 
-_Certainly not_ because it lets this script be highly configurable, extensible, reusable, or safe for strangers. This script is very much ___site-specific machinery___, a generator for a very specific site with my preferences hardcoded.
+_Certainly not_ because it lets this script be highly configurable, extensible, reusable, or safe for others. This script is very much ___site-specific machinery___, a generator for a very specific site with my preferences hardcoded.
 
 More because shell is easy to write, and very close to the filesystem. Many command line utilities are available, and it's _fun_ to glue them together and string pipes.
 
@@ -694,8 +694,7 @@ It's _fun_ to write in shell. And in this case, it's fast enough.
 
 The site works great! I've got GitHub Actions [set up](https://github.com/aashvikt/aashvikt.github.io/blob/main/.github/workflows/publish.yml) to build it (after setting up the Rust toolchain for comrak, if needed) every commit, and it's decent, with changes to my site usually being visible in an acceptable minute or two (not including the initial run with comrak rebuild) despite `./gen.sh` alone executing in under a second on my machine.
 
-And most importantly, I understand the script's one file end to end, which is, for me, the entire point.
+And most importantly, I understand the generator's one file, the handwritten templates, and all the (post) post-processing __end to end__, which is, for me, the entire point.
 
-<!-- Many lines! Not surprising given te feed templates and abrupt code blocks which I directly pasted in :)
-
-So I can stop messing with my site now! Finally, right? It's complete. Tell me it's done... ->>
+<!-- Many lines! Not surprising given the feed templates and abrupt code blocks which I directly pasted in :)
+So I can stop messing with my site now! Finally, right? It's complete. Tell me it's done... -->
