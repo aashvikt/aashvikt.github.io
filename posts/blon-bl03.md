@@ -3,7 +3,7 @@ date: 2024-07-01
 title: blon bl-03 in a sentence
 desc: A single-sentence post expressing my intense love for my new IEMs.
 tags: iems audio
-cats: misc gem
+cats: misc gem micro
 img: ./bl03.avif
 ---
 # BLON BL-03 in a sentence.

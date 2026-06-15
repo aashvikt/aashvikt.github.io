@@ -3,7 +3,7 @@ date: 2025-06-18
 title: 2010s cybershot dummy battery
 desc: I made a dummy battery to let me use my 2010 Sony DSC-H55 Cybershot camera with a power bank.
 tags: hw camera
-cats: misc
+cats: hw micro
 img: ./dummy-sony.avif
 ---
 # Dummy NP-BG1

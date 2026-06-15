@@ -3,7 +3,7 @@ date: 2020-09-13
 title: building my first computer
 desc: I built my first computer.
 tags: hw
-cats: misc
+cats: misc micro
 img: ./case.avif
 ---
 # I built a computer

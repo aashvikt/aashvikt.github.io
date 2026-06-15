@@ -42,7 +42,7 @@ a.anchor { text-decoration: none; }
 main :not(h1:first-of-type) > a.anchor::before { content: "§"; margin-right: 0.5ch; }
 pre, code, span[data-math-style] { font-family: monospace; }
 pre, nav.toc { padding: 1ch; outline: 0.1ch dashed var(--fg); }
-nav.toc>ul { list-style: none; padding: 0; margin: 0; }
+nav.toc>ul, ul[posts] { list-style: none; padding: 0; margin: 0; }
 :not(pre)>code { background: var(--cbg); }
 img, video, audio, iframe, pre, nav.toc, table, figure { width: fit-content; max-width: 100%; overflow-x: auto; margin: 0px auto; display: block; }
 figure { display: table; align-self: flex-start; }
@@ -70,15 +70,16 @@ dd::before, figcaption::before { content: "└─"; margin-right: 0.5ch; }
 .spoiler:not(:hover, :focus, :active, :focus-within) { filter: blur(0.4ch); }
 .footnotes { font-size: smaller; color: var(--m); }
 section[data-footnotes].footnotes ol li p {margin: 1ch}
-article[post] { display: flex; align-items: baseline; }
-article[post] time { font-size: smaller; white-space: nowrap; margin-right: 1ch; }
-article[post][gem] time, span[gem], :target, a[data-wikilink="true"], a:is(:hover, :focus, :active, :focus-within) {
+li[post] { display: flex; gap: 1ch; align-items: baseline; }
+li[post] time { font-size: smaller; white-space: nowrap; }
+li[post][gem] time, span[gem], :target, a[data-wikilink="true"], a:is(:hover, :focus, :active, :focus-within) {
     background: radial-gradient(var(--t), transparent); text-shadow: var(--bg) 0 0 1ch;
 }
-article[post][sw] a, span[sw] { color: light-dark(blue, #0978db); }
-article[post][hw] a, span[hw] { color: light-dark(green, #1daf3d); }
-article[post][rb] a, span[rb] { color: light-dark(red, #f7455d); }
-article[post][misc] a, span[misc] { color: light-dark(#555, #777); }</style>
+li[post][sw] a, span[sw] { color: light-dark(blue, #0978db); }
+li[post][hw] a, span[hw] { color: light-dark(green, #1daf3d); }
+li[post][rb] a, span[rb] { color: light-dark(red, #f7455d); }
+li[post][misc] a, span[misc] { color: light-dark(#555, #777); }
+span[micro] { font-size: small; font-weight: bold; font-style: italic; color: var(--m); }</style>
         ${head_extension}
     </head>
     <body>
@@ -98,11 +99,7 @@ article[post][misc] a, span[misc] { color: light-dark(#555, #777); }</style>
         <main>${post_content}</main>
         <footer>
             <nav>
-                <p>
-                    JS-free since <a href="https://en.wikipedia.org/wiki/AD_666"><time datetime='0666-01-01' title="Anno Daemonii, baby!">666</time></a>.
-                    Enter my <a href="/feedroll">antisocial media</a> or
-                    visit the <a href="/photos">gallery</a>?
-                </p>
+                <p>Enter my <a href="/feedroll">antisocial media</a> or visit the <a href="/photos">gallery</a>?</p>
                 <p>
                     <a href="https://github.com/aashvikt/aashvikt.github.io">source</a>
                     @ <a href="https://github.com/aashvikt/aashvikt.github.io/commit/${COMMIT_SHA}" title="current commit">${COMMIT_SHA}</a> ·

@@ -3,7 +3,7 @@ date: 2024-12-25
 title: advent of code 2024
 desc: I did this year's Advent of Code. I enjoyed it.
 tags: aoc sw
-cats: sw
+cats: sw micro
 img: ./calendar.avif
 ---
 # Advent of Code 2024

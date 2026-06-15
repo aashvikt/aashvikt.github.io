@@ -1,6 +1,6 @@
 ---
 date: 2025-07-13
-title: ds_store and dotfiles on mac and in finder
+title: ds-store and dotfiles on mac and in finder
 desc: quickly stopping macos file-hell
 tags: mac sw dotfiles
 cats: sw
