@@ -63,7 +63,7 @@ mc worlds:
 2: /home/souffle/Desktop/mc-mod-sets/multiplayer_friend2/
 3: /home/souffle/Desktop/mc-mod-sets/old_legacy_version/
 4: /home/souffle/Desktop/mc-mod-sets/singleplayer_world/
-mc world index: 
+mc world index:
 ```
 
 Say I'd like the mods I need to play `old_legacy version`:
@@ -75,7 +75,7 @@ shifted to: /home/souffle/Desktop/mc-mod-sets/old_legacy_version/
 And it's done! If you want to check:
 ```
 souffle@soufz ~> ls ~/.minecraft/mods
-mod_1322_v1.0.2.jar  mod_5740_v1.1.0.jar  mod_7179_v5.0.7.jar  mod_8080_v10.6.9.jar  mod_8195_v6.0.1.jar
+mod_1322_v1.0.2.jar mod_8195_v6.0.1.jar
 ```
 
 What can I say? It's a breeze!

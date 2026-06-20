@@ -70,7 +70,7 @@ $(
         s@(<(img|a)[^>]*[[:space:]](src|href)=[\"'\'']?)\.@\1/assets/'"$post_slug"'@g
         s@<img([^>]*?)\s+src="([^"]+\.(mp4|mov|ogv|webm|m4v|mkv|avi|mpg|mpeg))"[^>]*/?>@<video controls src="\2"\1></video>@g
         s@<img([^>]*?)\s+src="([^"]+\.(mp3|wav|ogg|aac|m4a|flac))"[^>]*/?>@<audio controls src="\2"\1></audio>@g
-        s@<span class="spoiler">@<span class="spoiler" tabindex="0">@g
+        s@<span class="spoiler">@<span spoiler tabindex="0">@g
     ' \
     | awk '
         BEGIN { toc=""; prev=0; indent=""; body="" }
@@ -92,7 +92,7 @@ $(
                 indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"
                 for(i=1;i<prev;i++) { indent=substr(indent,1,length(indent)-2); toc=toc indent"</ul>\n"; indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n" }
                 toc=toc"</ul>\n"
-                toc_html = "<nav class=\"toc\">\n" toc "</nav>"
+                toc_html = "<nav toc>\n" toc "</nav>"
                 gsub(/<pre[^>]*><code class="language-toc">[^<]*<\/code><\/pre>/, toc_html, body)
             }
             printf "%s", body
@@ -111,7 +111,7 @@ envsubst < template/index.html > "${post_dir}/index.html"
 
     li="\
 <li post ${post_cats} id='post-${post_slug}'>
-    <time datetime='${post_date}'>${post_date}</time>
+    <time datetime='${post_date}'>${post_date}</time>&ensp;
     <header>$(echo "$post_cats" | grep -q micro && echo "<span micro>micro</span>") <a href='/posts/${post_slug}' title='${post_desc} [${post_tags_comma}] [${post_date%??????}]'>${post_title}</a></header>
 </li>"
 
@@ -128,7 +128,7 @@ envsubst < template/index.html > "${post_dir}/index.html"
     <summary type='html'><![CDATA[
         $([ -n "$post_image" ] && echo "<img src='${post_image}'>")
         <p>${post_desc}</p>
-        $(sed -n '/<nav class="toc">/,/<\/nav>/{p;/<\/nav>/q}' public/posts/${post_slug}/index.html)
+        $(sed -n '/<nav toc>/,/<\/nav>/{p;/<\/nav>/q}' public/posts/${post_slug}/index.html)
     ]]></summary>
     $(echo "$post_tags" | sed -E "s/([^ ]+)/<category term='\1' label='\1' scheme='https:\/\/aashvik.com\/tags#\1'\/>/g")
 </entry>"
@@ -174,13 +174,6 @@ post_tags_comma="tags, categories" \
 post_content="<h1>Tags</h1><nav>${tags_page%<br>}</nav>" \
 envsubst < template/index.html > "public/tags/index.html"
 
-navstyle="<style>main{
-    &:has(nav[cats] span[sw]:is(:hover,:focus,:active,:focus-within)){li[post][sw],span[sw]{background:radial-gradient(var(--t),transparent);text-shadow:var(--bg) 0 0 1ch}};
-    &:has(nav[cats] span[hw]:is(:hover,:focus,:active,:focus-within)){li[post][hw],span[hw]{background:radial-gradient(var(--t),transparent);text-shadow:var(--bg) 0 0 1ch}};
-    &:has(nav[cats] span[rb]:is(:hover,:focus,:active,:focus-within)){li[post][rb],span[rb]{background:radial-gradient(var(--t),transparent);text-shadow:var(--bg) 0 0 1ch}};
-    &:has(nav[cats] span[misc]:is(:hover,:focus,:active,:focus-within)){li[post][misc],span[misc]{background:radial-gradient(var(--t), transparent);text-shadow:var(--bg) 0 0 1ch}};
-    &:has(nav[cats] span[micro]:is(:hover,:focus,:active,:focus-within)){li[post][micro],span[micro]{background:radial-gradient(var(--t), transparent);text-shadow:var(--bg) 0 0 1ch}};
-};</style>"
 navline="<nav cats><p>View <span sw tabindex=0>software</span>, <span hw tabindex=0>hardware</span>, <span rb tabindex=0>robotics</span>, <span misc tabindex=0>misc</span>, <span micro tabindex=0>micros</span>,"
 
 post_title=aashvik \
@@ -188,7 +181,6 @@ post_desc="computers, robotics, and more" \
 post_tags_comma="index, home, landing, blog" \
 post_content="${navline} or <a href=/drafts>drafts</a>.</p></nav>
 <ul posts>${index}</ul>" \
-head_extension="$navstyle" \
 envsubst < template/index.html > public/index.html
 
 mkdir -p public/drafts/
@@ -198,7 +190,6 @@ post_tags_comma="drafts, posts, wip" \
 post_content="<h1>Drafts</h1>
 ${navline} or <a href=/>published</a>.</p></nav>
 <ul posts>${drafts}</ul>" \
-head_extension="$navstyle" \
 envsubst < template/index.html > "public/drafts/index.html"
 
 date_8601=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
