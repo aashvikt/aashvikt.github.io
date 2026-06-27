@@ -48,8 +48,13 @@ for md in $(
     post_content="\
 <nav><p>
     <small>
-        <a href='/posts/${post_slug}.md' title='view markdown'>View source</a> for $(echo "$post_cats" | grep -q micro && echo "<span micro>micro</span>") \"${post_title}\"
-        from <a href='/$(echo "$post_cats" | grep -q draft && echo "drafts")#post-${post_slug}'><span ${post_cats}><time datetime='${post_date}'>${post_date}</time></span></a>
+        <a href='/posts/${post_slug}.md' title='view markdown'>View source</a> for
+        $(case $post_cats in *micro*) echo "<span micro>micro</span>";; esac)
+        $(case $post_cats in *draft*) echo "draft";; esac)
+        \"${post_title}\" from
+        <a href='/$(case $post_cats in *draft*) echo "drafts";; esac)#post-${post_slug}'>
+            <span $(echo "$post_cats" | sed 's/micro//')><time datetime='${post_date}'>${post_date}</time></span>
+        </a>
         in $(echo "$post_tags" | sed -E "s/([^ ]+)/<a href='\/tags#\1'\>\1<\/a>, /g" | sed 's/, $//').
         <br><i>${post_desc}</i>
     </small>
@@ -65,12 +70,16 @@ $(
         --extension alerts,autolink,description-lists,footnotes,greentext,math-code,math-dollars,multiline-block-quotes,spoiler,strikethrough,subscript,superscript,table,tasklist,underline,wikilinks-title-before-pipe \
         ${md} \
     | sed -z -E '
-        s@(<p>)?((<img[^>]*[[:space:]]*/?>[[:space:]]*){2,})(</p>)?@<div style="display:flex;gap:1ch;">\2</div>@g
-        s@(<p>)?<img([^>]*)title="([^"]+)"([^>]*)>(</p>)?@<figure><img\2title="\3"\4><figcaption>\3</figcaption></figure>@g
-        s@(<(img|a)[^>]*[[:space:]](src|href)=[\"'\'']?)\.@\1/assets/'"$post_slug"'@g
-        s@<img([^>]*?)\s+src="([^"]+\.(mp4|mov|ogv|webm|m4v|mkv|avi|mpg|mpeg))"[^>]*/?>@<video controls src="\2"\1></video>@g
-        s@<img([^>]*?)\s+src="([^"]+\.(mp3|wav|ogg|aac|m4a|flac))"[^>]*/?>@<audio controls src="\2"\1></audio>@g
-        s@<span class="spoiler">@<span spoiler tabindex="0">@g
+        s@(<p>)?((<img[^>]*>[[:space:]]*){2,})(</p>)?@<div gallery>\2</div>@g
+        s@(<p>)?<img([^>]*)>(</p>)?@<figure><img width=300\2></figure>@g
+        s@<img([^>]*)title="([^"]+)"([^>]*)>@<img\1title="\2"\3><figcaption>\2</figcaption>@g
+        s@(<(img|a)[^>]*(src|href)=[\"'\'']?)\.@\1/assets/'"$post_slug"'@g
+        s@<img([^>]*?)\s+src="([^"]+\.(mp4|mov|ogv|webm|m4v|mkv|avi|mpg|mpeg))"([^>]*)>@<video\1 controls src="\2"\3></video>@g
+        s@<img([^>]*?)\s+src="([^"]+\.(mp3|wav|ogg|aac|m4a|flac))"([^>]*)>@<audio\1 controls src="\2"\3></audio>@g
+        s@<span class="spoiler">@<strong nostyle>(spoiler) </strong><span spoiler tabindex="0">@g
+        s@<dl>@<p nostyle><strong>Definitions:</strong></p>&@g
+        s@<p class="markdown-alert-title">@&<strong nostyle>Alert: </strong>@g
+        s@<div dia( me)?>@&<strong nostyle><br>Speech bubble\1: </strong>@g
     ' \
     | awk '
         BEGIN { toc=""; prev=0; indent=""; body="" }
@@ -79,10 +88,26 @@ $(
             if(match($0,/id="[^"]+"/)) id=substr($0,RSTART+4,RLENGTH-5)
             if(id) {
                 txt=$0; sub(/^<h[1-6][^>]*>/,"",txt); sub(/<\/h[1-6]>$/,"",txt); gsub(/<[^>]+>/,"",txt)
-                if(!prev) { toc=toc"<ul>\n"; indent="  "; toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  " }
-                else if(level>prev) { toc=toc indent"<ul>\n"; indent=indent"  "; toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  " }
-                else if(level==prev) { indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"; toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  " }
-                else { indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"; for(i=level;i<prev;i++) { indent=substr(indent,1,length(indent)-2); toc=toc indent"</ul>\n"; indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n" }; toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  " }
+                if (!prev) {
+                    toc=toc"<ul>\n"; indent="  "
+                    toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  "
+                }
+                else if (level>prev) {
+                    toc=toc indent"<ul>\n"; indent=indent"  "
+                    toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  "
+                }
+                else if (level==prev) {
+                    indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"
+                    toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  "
+                }
+                else {
+                    indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"
+                    for(i=level;i<prev;i++) {
+                        indent=substr(indent,1,length(indent)-2); toc=toc indent"</ul>\n"
+                        indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"
+                    };
+                    toc=toc indent"<li><a href=\"#"id"\">"txt"</a>\n"; indent=indent"  "
+                }
                 prev=level
             }
         }
@@ -90,7 +115,10 @@ $(
         END {
             if(prev>0) {
                 indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"
-                for(i=1;i<prev;i++) { indent=substr(indent,1,length(indent)-2); toc=toc indent"</ul>\n"; indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n" }
+                for(i=1;i<prev;i++) {
+                    indent=substr(indent,1,length(indent)-2); toc=toc indent"</ul>\n"
+                    indent=substr(indent,1,length(indent)-2); toc=toc indent"</li>\n"
+                }
                 toc=toc"</ul>\n"
                 toc_html = "<nav toc>\n" toc "</nav>"
                 gsub(/<pre[^>]*><code class="language-toc">[^<]*<\/code><\/pre>/, toc_html, body)
@@ -105,17 +133,20 @@ $(
         s/ /%20/g;s/!/%21/g;s/"/%22/g;s/#/%23/g;s/\$/%24/g;s/&/%26/g;
         s/'"'"'/%27/g;s/(/%28/g;s/)/%29/g;s/*/%2A/g;s/+/%2B/g;s/,/%2C/g;s/\//%2F/g;
         s/:/%3A/g;s/;/%3B/g;s/=/%3D/g;s/?/%3F/g;s/@/%40/g;s/\[/%5B/g;s/\]/%5D/g
-    'cats
+    '
 )'>Comment on \"${post_title}\"</a></p>" \
 envsubst < template/index.html > "${post_dir}/index.html"
 
     li="\
 <li post ${post_cats} id='post-${post_slug}'>
     <time datetime='${post_date}'>${post_date}</time>&ensp;
-    <header>$(echo "$post_cats" | grep -q micro && echo "<span micro>micro</span>") <a href='/posts/${post_slug}' title='${post_desc} [${post_tags_comma}] [${post_date%??????}]'>${post_title}</a></header>
+    <header>
+        $(case $post_cats in *micro*) echo "<span micro>micro</span>";; esac)
+        <a href='/posts/${post_slug}' title='${post_desc} [${post_tags_comma}] [${post_date%??????}]'>${post_title}</a>
+    </header>
 </li>"
 
-    echo "$post_cats" | grep -q draft && drafts="${drafts}${li}" && continue
+    case $post_cats in *draft*) drafts="${drafts}${li}"; continue ;; esac
 
     index="${index}${li}"
 
@@ -141,8 +172,7 @@ envsubst < template/index.html > "${post_dir}/index.html"
         esac
         tagn=$(get_tag_index $tag)
         eval "tag_${tagn}=\"\${tag_${tagn}} ${post_slug}\""
-        eval "tag_${tagn}_lis=\"\${tag_${tagn}_lis-}
-${li}\""
+        eval "tag_${tagn}_lis=\"\${tag_${tagn}_lis-} ${li}\""
     done
 
 done
@@ -174,7 +204,8 @@ post_tags_comma="tags, categories" \
 post_content="<h1>Tags</h1><nav>${tags_page%<br>}</nav>" \
 envsubst < template/index.html > "public/tags/index.html"
 
-navline="<nav cats><p>View <span sw tabindex=0>software</span>, <span hw tabindex=0>hardware</span>, <span rb tabindex=0>robotics</span>, <span misc tabindex=0>misc</span>, <span micro tabindex=0>micros</span>,"
+navline="<nav cats><p>View <span sw tabindex=0>software</span>, <span hw tabindex=0>hardware</span>,
+<span rb tabindex=0>robotics</span>, <span misc tabindex=0>misc</span>, <span micro tabindex=0>micros</span>,"
 
 post_title=aashvik \
 post_desc="computers, robotics, and more" \

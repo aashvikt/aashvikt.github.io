@@ -9,12 +9,17 @@ img: ./dummy-sony.avif
 # Dummy NP-BG1
 ![dsc h55 lying lens-up on a shrub](./h55-wilderness.avif)
 
-This is the Sony Cybershot DSC-H55. It's a 14-megapixel digital camera from 2010 with a maximum resolution of 4320 x 3240. It has a fixed screen and lens, making it small and portable. It can take nice photos, and it really does try to take videos when you ask it to.
+This is the Sony Cybershot DSC-H55. It's a 14-megapixel digital camera from 2010 with a maximum resolution of 4320 x 3240. It has a fixed screen and lens, making it small and portable. It can take nice photos, and it really does try to take videos when you... _ask_ it to.
+
+<div dia me>Take videos!</div>
+<div dia>*camera noises*</div>
+
+Here it is:
 
 ![dsc h55 with LCD screen side showing](./h55-front.avif)
 ![dsc h55 with lens side showing](./h55-back.avif)
 
-It's powered by NP-BG1 batteries:
+While I'm a sucker for the style of photos it takes, its battery life has aged worse than the camera. It's powered by NP-BG1 batteries:
 
 ![official sony np-bg1 battery](./sony-side.avif "1st-party NP-BG1")
 ![side view of the backside of an np-bg1 battery](./sony-back-side.avif "Li-ion...")
@@ -29,7 +34,7 @@ After taking out the Digitek cell, I put a protoboard in the frame and soldered 
 ![soldered dummy battery lying on its side, ugly](./dummy.avif)
 ![completed dummy battery next to official sony](./dummy-sony.avif)
 
-Surprisingly, despite all the extra bulging, it fit into the camera. Pulling it out was more difficult. The battery door, of course, can not close while the camera is plugged into power.
+Surprisingly, despite all the extra bulging, it fit into the camera. Pulling it out was more difficult. The battery door, of course, cannot close while the camera is plugged into power.
 
 It was ugly, but after randomly trying a few different resistors on the "C" ("Communication"? Usually a thermistor, I'm guessing) pad between the anode and cathode, I managed to fool the camera into allowing itself to work with this battery in and powered by USB-C.
 

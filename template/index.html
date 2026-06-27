@@ -42,9 +42,10 @@ pre, code, span[data-math-style] { font-family: monospace; }
 pre, nav[toc] { padding: 1ch; outline: 0.1ch dashed var(--fg); }
 [toc]>ul, ul[posts] { list-style: none; padding: 0; margin: 0; }
 :not(pre)>code { background: var(--cbg); }
-img, video, audio, iframe, pre, nav[toc], table, figure { width: fit-content; max-width: 100%; overflow-x: auto; margin: 0px auto; display: block; }
+img, video, audio, iframe, pre, nav[toc], table, figure { width: fit-content; max-width: 100%; overflow-x: auto; margin: 1ch auto; display: block; }
 figure { display: table; align-self: flex-start; }
-figcaption { color: var(--mute); display: table-caption; caption-side: bottom; margin-top: 1ch; }
+figcaption { color: var(--mute); display: table-caption; caption-side: bottom; }
+[gallery] { display: flex; gap: 1ch; }
 table { border-collapse: collapse; }
 tr>:not(:last-child) { padding-right: 1ch; border-right: 1px solid var(--fg); }
 tr>:not(:first-child) { padding-left: 1ch; }
@@ -66,8 +67,9 @@ dt, .markdown-alert-title { font-weight: bold; }
 dd { margin-left: 1ch; color: var(--mute); }
 dd::before, figcaption::before { content: "└─"; margin-right: 0.5ch; }
 [spoiler]:not(:hover, :focus, :active, :focus-within) { filter: blur(0.4ch); }
+[nostyle] { display: none; }
 .footnotes { font-size: smaller; color: var(--mute); }
-section[data-footnotes].footnotes ol li p {margin: 1ch}
+section[data-footnotes].footnotes ol li p { margin: 1ch }
 [post] { display: flex; align-items: baseline; }
 [post] time { font-size: smaller; white-space: nowrap; }
 [post][gem] time, span[gem], :target, a[data-wikilink="true"], a:is(:hover, :focus, :active, :focus-within) {
@@ -84,23 +86,35 @@ span[micro] { font-size: small; font-weight: bold; font-style: italic; color: va
 :has(span[hw]:is(:hover,:focus,:active)) { [hw] { background: rgb(from var(--green) r g b / 20%); } }
 :has(span[rb]:is(:hover,:focus,:active)) { [rb] { background: rgb(from var(--red) r g b / 20%); } }
 :has(span[misc]:is(:hover,:focus,:active)) { [misc] { background: rgb(from var(--misc) r g b / 15%); } }
-:has([cats] span[micro]:is(:hover,:focus,:active)) { [micro] { background: rgb(from var(--mute) r g b / 25%); } }</style>
+:has([cats] span[micro]:is(:hover,:focus,:active)) { [micro] { background: rgb(from var(--mute) r g b / 25%); } }
+[dia] { width: fit-content; max-width: 80%; padding: 1ch; border-radius: 2ch; }
+[dia]:has(+[dia]) { margin-bottom: 1ch; }
+[dia][me] { background: rgb(from var(--blue) r g b / 20%); margin-left: auto; border-bottom-right-radius: 0; }
+[dia]:not([me]) { background: rgb(from var(--green) r g b / 20%); border-bottom-left-radius: 0; }
+[dia][me]+[dia][me] { border-top-right-radius: 0; }
+[dia]:not([me])+[dia]:not([me]) { border-top-left-radius: 0; }
+[dia][me]+[dia][me]:not(:has(+[dia][me])) { border-bottom-right-radius: 2ch; }
+[dia]:not([me])+[dia]:not([me]):not(:has(+[dia]:not([me]))) { border-bottom-left-radius: 2ch; }</style>
         ${head_extension}
     </head>
     <body>
-        <header><nav><p>
-            <a href="/">~ash</a> ·
-            <a href="/tags">tags</a> ·
-            <a href="/atom.xml">feed</a> ·
-            git:
-            <a href="https://github.com/aashvikt" rel="me">hub</a>, <a href="https://gitlab.com/aashvik" rel="me">lab</a> ·
-            elsewhere:
-            <a href="https://mastodon.social/@aashvik" rel="me">fedi</a>,
-            <a href="https://discord.com/users/828870867424378921">discord</a>,
-            <a href="mailto:aashvik&#64;aashvik.com" rel="me">mail</a> ·
-            <input type=radio id=light name=theme aria-label="light mode"> <label for=light title="light mode">☼</label> /
-            <input type=radio id=dark name=theme aria-label="dark mode"> <label for=dark title="dark mode">☾</label>
-        </p></nav></header>
+        <header>
+            <nav><p>
+                <strong><a href="/">~ash</a></strong> ·
+                <a href="/tags">tags</a> ·
+                <a href="/atom.xml">feed</a> ·
+                git:
+                <a href="https://github.com/aashvikt" rel="me">hub</a>, <a href="https://gitlab.com/aashvik" rel="me">lab</a> ·
+                elsewhere:
+                <a href="https://mastodon.social/@aashvik" rel="me">fedi</a>,
+                <a href="https://discord.com/users/828870867424378921">discord</a>,
+                <a href="mailto:aashvik&#64;aashvik.com" rel="me">mail</a> ·
+                <input type=radio id=light name=theme aria-label="light mode"> <label for=light title="light mode">☼</label> /
+                <input type=radio id=dark name=theme aria-label="dark mode"> <label for=dark title="dark mode">☾</label>
+            </p></nav>
+            <noscript><p>No JS, is it? No problem!</p></noscript>
+            <p nostyle>No CSS? No sweat! Let me know if there's something to improve.</p>
+        </header>
         <main>${post_content}</main>
         <footer>
             <nav>

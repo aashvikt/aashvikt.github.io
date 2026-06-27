@@ -68,8 +68,7 @@ The other method of unlock, the fingerprint reader, on the other hand, is hot tr
 
 ### 'n more
 - It has a **headphone jack**! ![headphone jack with cable connected on phone](./headphone-jack.avif "Another rare inclusion, and audio quality out of it is decent!")
-- It has lights on the back! They flash about when your phone rings, but I didn't set them up again after debloating my phone.
-    ![back of phone showing LEDs 1](./side-back-back.avif) ![back of phone showing LEDs 2](./side-back-front.avif)
+- It has lights on the back! They flash about when your phone rings, but I didn't set them up again after debloating my phone. ![back of phone showing LEDs 1](./side-back-back.avif) ![back of phone showing LEDs 2](./side-back-front.avif)
 - It comes with a **lanyard**! ![adding lanyard](./lanyard-toothpick.avif "Installation requires something pointy") ![catching lanyard](./lanyard-catch.avif "Incredible utility! ")
 - The rubber case it comes with can get pretty disgusting. I might look into 3d printing one later.
 - It has an "action button" ![red button on side of phone](./red-button.avif "I've got it set to turn the flashlight on! Also in view, is the unorthodox placement of USB-C: on the side")

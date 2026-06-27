@@ -67,6 +67,30 @@ images separated by only one newline or one whitespace show up side-by-side:
 ![back of (new) robot](/assets/rfgy24/back.avif "Back of the new robot")
 >>>
 
+## chat/speech bubbles for dialogue
+Do `<div dia>` and `<div dia me>`:
+```html
+<div dia me>2b</div>
+<div dia>two what?</div>
+<div dia me>two bees.</div>
+<div dia me>there look</div>
+<div dia>where</div>
+<div dia>where!? i can't see them</div>
+<div dia>r u messing with me</div>
+<div dia me>:P</div>
+```
+Looks like:
+>>>
+<div dia me>2b</div>
+<div dia>two what?</div>
+<div dia me>two bees.</div>
+<div dia me>there look</div>
+<div dia>where</div>
+<div dia>where!? i can't see them</div>
+<div dia>r u messing with me</div>
+<div dia me>:P</div>
+>>>
+
 ## spoilers and html
 `||spoiler||`, so darth vader is ||luke's daddy||
 
@@ -122,10 +146,10 @@ looks like
 > [!tip]
 > get more success
 
-> [!important]  
+> [!important]
 > crucial to success
 
-> [!warning]  
+> [!warning]
 > immediate attention required
 
 > [!caution]
@@ -164,12 +188,13 @@ word
 :   meaning
 ```
 for
-
+>>>
 term1
 :   definition1
 
-term2
-:   definition2
+word
+:   meaning
+>>>
 
 ## quotes
 > `> single line quote`, and
