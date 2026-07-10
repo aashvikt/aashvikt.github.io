@@ -157,7 +157,7 @@ envsubst < template/index.html > "${post_dir}/index.html"
     <updated>${post_date}T00:00:00Z</updated>
     <link rel='alternate' type='text/html' href='https://aashvik.com/posts/${post_slug}'/>
     <summary type='html'><![CDATA[
-        $([ -n "$post_image" ] && echo "<img src='${post_image}'>")
+        $([ -n "$post_image" ] && echo "<img width=200 src='${post_image}'>")
         <p>${post_desc}</p>
         $(sed -n '/<nav toc>/,/<\/nav>/{p;/<\/nav>/q}' public/posts/${post_slug}/index.html)
     ]]></summary>
