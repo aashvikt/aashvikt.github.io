@@ -236,13 +236,6 @@ post_tags_comma="photography, gallery" \
 post_content="<h1>The gallery is coming soon :></h1>" \
 envsubst < template/index.html > public/photos/index.html
 
-mkdir public/feedroll
-post_title="feedroll"    \
-post_desc="public static blogroll feed reader" \
-post_tags_comma="feed, blogroll" \
-post_content="<h1>My feedroll is coming soon :></h1>" \
-envsubst < template/index.html > public/feedroll/index.html
-
 mkdir public/gen.sh
 post_title="gen.sh"    \
 post_desc="static site generator" \
