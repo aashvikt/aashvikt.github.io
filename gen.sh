@@ -65,7 +65,7 @@ $(
         --smart \
         --front-matter-delimiter --- \
         --relaxed-autolinks \
-        --header-ids '' \
+        --header-id-prefix '' \
         --syntax-highlighting none \
         --extension alerts,autolink,description-lists,footnotes,greentext,math-code,math-dollars,multiline-block-quotes,spoiler,strikethrough,subscript,superscript,table,tasklist,underline,wikilinks-title-before-pipe \
         ${md} \
